@@ -1,0 +1,11 @@
+[Unit]
+Description=EvoStream Media Server Web UI
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/evo-node /usr/bin/node-webui/bin/webui_activate /etc/evostreamms/webconfig.json
+User=evostreamd
+Group=evostreamd
+
+[Install]
+WantedBy=multi-user.target
