@@ -1,0 +1,13 @@
+[Unit]
+Description=EvoStream Media Server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/evostreamms --daemon --pid=/run/evostreamms/evostreamms.pid /etc/evostreamms/config.lua
+PIDFile=/run/evostreamms/evostreamms.pid
+User=evostreamd
+Group=evostreamd
+
+[Install]
+WantedBy=multi-user.target
